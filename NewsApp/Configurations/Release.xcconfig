@@ -1,0 +1,19 @@
+//
+//  Release.xcconfig
+//  NewsApp
+//
+//  Created by Al-sawafta, Amjad on 11/11/18.
+//  Copyright © 2018 AlFuttam. All rights reserved.
+//
+
+//MARK: App Configurations
+
+APP_NAME            = News
+APP_VERSION         = 1
+APP_BUNDLE_ID       = com.alfuttam.NewsApp.com
+APP_BUILD_NUMBER    = 1
+
+//MARK: APIs Configurations
+
+BASE_URL            = https:\/\/newsapi.org/v2/
+API_KEY             = 8244caa0df9d4312b7509ed91a3e1785
