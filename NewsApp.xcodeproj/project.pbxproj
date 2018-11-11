@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B8654DCC77201F4BF6B3FF8 /* Pods_NewsAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F550E4AD939E317B9A8BC843 /* Pods_NewsAppUITests.framework */; };
 		6E270AD797D9536E11964DC3 /* Pods_NewsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D24C54E5E0D63D51200BD6F1 /* Pods_NewsAppTests.framework */; };
+		94386FB42197AEF50057FBC1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94386FB32197AEF50057FBC1 /* Keys.swift */; };
 		947135C72197A4C2005E4493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947135C62197A4C2005E4493 /* AppDelegate.swift */; };
 		947135C92197A4C2005E4493 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947135C82197A4C2005E4493 /* ViewController.swift */; };
 		947135CC2197A4C2005E4493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947135CA2197A4C2005E4493 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		94386FB02197AB380057FBC1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		94386FB12197AB570057FBC1 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		94386FB22197AB630057FBC1 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		94386FB32197AEF50057FBC1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		947135C32197A4C2005E4493 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		947135C62197A4C2005E4493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		947135C82197A4C2005E4493 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		94386FA82197AA060057FBC1 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				94386FB32197AEF50057FBC1 /* Keys.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				947135C92197A4C2005E4493 /* ViewController.swift in Sources */,
+				94386FB42197AEF50057FBC1 /* Keys.swift in Sources */,
 				947135C72197A4C2005E4493 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,6 +528,7 @@
 /* Begin XCBuildConfiguration section */
 		94386FAC2197AB070057FBC1 /* Staging */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94386FB12197AB570057FBC1 /* Staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -596,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alfuttam.NewsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "--APP-BUNDLE-ID-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -647,6 +652,7 @@
 		};
 		947135E92197A4C4005E4493 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94386FB02197AB380057FBC1 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -708,6 +714,7 @@
 		};
 		947135EA2197A4C4005E4493 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94386FB22197AB630057FBC1 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -774,7 +781,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alfuttam.NewsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "--APP-BUNDLE-ID-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -795,7 +802,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alfuttam.NewsApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "--APP-BUNDLE-ID-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
