@@ -10,17 +10,36 @@ import UIKit
 import Swinject
 import SwinjectStoryboard
 
+/**
+  DependencyInjection class used for register Models , ViewModels and Views into shared container.
+ It can be used to reslove the injected dependencies into another instnace.
+ */
 
 class DependencyInjection {
-    
-    static let sharedInstance = DependencyInjection()
 
+    /**
+     Singleton for DependencyInjection class.It used to define shared instance of Container class.
+     */
+    static let sharedInstance = DependencyInjection()
+    
+    /**
+     Shared Container for Dependency Injection Manager
+     */
     var container: Container!
 
+    
+    /**
+     startInjection method called once on App launch to inject all dependancies.
+     - returns:
+     The shared Container which used to inject all dependancies.
+     */
+    
     func startInjection()->Container{
-        // DI
+
         container = Container() { container in
-            // Model
+            
+            //MARK: Model Injection
+            
             container.register(Networking.self) { _ in
                 Network()
             }
@@ -29,14 +48,15 @@ class DependencyInjection {
             }
             
             
-            // ViewModel
+            //MARK: ViewModel Injection
+            
             container.register(AtriclesSearchViewModeling.self) { r in
                 ArticlesSearchViewModel(
                     network: r.resolve(Networking.self)!,
                     articleService: r.resolve(ArticleServicing.self)!)
             }
             
-            // Views
+            //MARK: Views Injection
 
             container.storyboardInitCompleted(UINavigationController.self) { _,_ in }
             container.storyboardInitCompleted(SearchViewController.self) { r,c in

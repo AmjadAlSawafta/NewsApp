@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Public Enum for Networking Errors (Http request errors)
+ */
 public enum NetworkError: Error {
     /// Unknown or not supported error.
     case Unknown

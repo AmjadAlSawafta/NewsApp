@@ -8,10 +8,22 @@
 
 import Himotoki
 
+/**
+ 
+ Entity for Article source inner object which return form articles search API.
+ 
+ */
+
 struct ArticleSource {
     let id : String?
     let name : String
 }
+
+/**
+ 
+ Entity for Article JSON object which return form articles search API.
+ 
+ */
 
 struct Article {
 
@@ -25,7 +37,11 @@ struct Article {
     let content : String
 }
 
-
+/**
+ 
+ Extension for Himotoki Pod impmelentation (decoding process)
+ 
+ */
 
 extension ArticleSource: Himotoki.Decodable {
     static func decode(_ e: Extractor) throws -> ArticleSource {
@@ -36,7 +52,11 @@ extension ArticleSource: Himotoki.Decodable {
     }
 }
 
-
+/**
+ 
+ Extension for Himotoki Pod impmelentation (decoding process)
+ 
+ */
 
 extension Article: Himotoki.Decodable {
     static func decode(_ e: Extractor) throws -> Article {

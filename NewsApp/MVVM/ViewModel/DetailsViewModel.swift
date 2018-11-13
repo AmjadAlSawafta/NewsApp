@@ -11,6 +11,10 @@ import RxCocoa
 import RxSwift
 import AppExtensions
 
+/**
+ used to determine rowHeight of Details Table View cells bacause title and description have dynamic heights.
+ */
+
 enum DetailsCellType {
     case image(url:String)
     case title(text:String,font:UIFont)
@@ -32,6 +36,9 @@ let detailsFont = UIFont.boldSystemFont(ofSize: 17)
 let descriptionFont = UIFont.systemFont(ofSize: 14)
 let textMargins : CGFloat = 32
 
+/**
+ protocol to bind details view controller views.
+ */
 protocol DetailsViewModeling {
     var imageUrl:String {get}
     var title:String {get}
@@ -44,6 +51,9 @@ protocol DetailsViewModeling {
     var cells:[DetailsCellType] {get}
 }
 
+/**
+ DetailsViewModeling implementaion class.
+ */
 class DetailsViewModel: DetailsViewModeling {
     
     
@@ -56,6 +66,9 @@ class DetailsViewModel: DetailsViewModeling {
     var url:String
     var cells:[DetailsCellType]
 
+    /**
+     internal initlize for DetailsViewModel to set DetailsViewModeling values and cell types.
+     */
     init(article: Article) {
         
         self.imageUrl = article.imageUrl

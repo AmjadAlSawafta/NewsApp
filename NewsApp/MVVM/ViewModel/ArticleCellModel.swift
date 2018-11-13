@@ -9,6 +9,10 @@
 import UIKit
 import AppExtensions
 
+/**
+ used to bind Article cell views.
+ */
+
 protocol ArticleCellModeling {
     var imageUrl: String { get }
     var source: String { get }

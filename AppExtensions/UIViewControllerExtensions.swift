@@ -9,8 +9,22 @@
 import Foundation
 import SafariServices
 
+/**
+ 
+ UIViewController extension
+ 
+ */
 public extension UIViewController {
 
+    /**
+     
+     Show Safari Browser for given URL.
+     
+     - parameters:
+        - url : string url to show it on Safari web view
+     
+     */
+    
     public func showBroswer(for url:String){
         guard let url = URL(string: url) else {
             return

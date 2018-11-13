@@ -8,12 +8,24 @@
 
 import Himotoki
 
+/**
+ 
+  Entity for articles search API main JSON object.
+ 
+ */
+
 struct ArticlesResponse {
 
     let status : String
     let totalResults : Int
     let articles : [Article]
 }
+
+/**
+ 
+ Extension for Himotoki Pod impmelentation (decoding process)
+ 
+ */
 
 extension ArticlesResponse: Himotoki.Decodable {
     static func decode(_ e: Extractor) throws -> ArticlesResponse {

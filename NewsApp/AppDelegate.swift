@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
        
+        // inject all Dependencies once on app luanch
         let container = DependencyInjection.sharedInstance.startInjection()
+        // init window and it root view controller using shared container
         initScreen(with: container)
         return true
     }
@@ -47,8 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 extension AppDelegate {
-    
+    /**
+     init window and it root view controller using shared container.
+     - parameters:
+        - container : shared container for DependencyInjection maanger.
+     */
     func initScreen(with container:Container){
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.backgroundColor = UIColor.white

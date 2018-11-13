@@ -8,15 +8,25 @@
 
 import UIKit
 
+/**
+ used to show article details on table view cell.
+ */
+ 
 class ArticleTableViewCell: BaseTableViewCell {
 
+    //MARK: IBOutlets
+    
     @IBOutlet weak var titleLabel: BaseLabel!
     @IBOutlet weak var publishedDateLabel: BaseLabel!
     @IBOutlet weak var sourceLabel: BaseLabel!
     @IBOutlet weak var articleImageView: BaseImageView!
     
+    //MARK: Cell ideneitifer
+
     static let Id = "ArticleTableViewCell"
     
+    //MARK: view model which resposble for binding article details on cell IBOutlets
+
     var viewModel : ArticleCellModeling? = nil {
         didSet{
             guard let viewModel = viewModel else {return}

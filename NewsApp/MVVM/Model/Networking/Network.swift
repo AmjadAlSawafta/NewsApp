@@ -11,18 +11,60 @@ import RxCocoa
 import Alamofire
 import Himotoki
 
+/**
+ enum for all http methods
+ */
+
 enum NetworkMethod {
     case get, post, put, delete
 }
 
+/**
+ protocol to make a http request and return decodable model.
+ */
+
 protocol Networking {
+    
+    /**
+     protocol method to fetch JSON from http request and decode it using 'Himotoki' Pod.
+     It uses Alamofire Pod for Networking.
+     
+     - returns:
+        return Observable of type Himotoki.Decodable which emit an event when the request is finished.
+     
+     - parameters:
+        - method: enum case from NetworkMethod (Http Method).
+        - url: The http request end point path which contins the path and the query string params.
+        - parameters : the http requst body params.
+        - type : decoadable class type to cast JSON results
+     
+     */
+    
     func request<D: Himotoki.Decodable>(method: NetworkMethod, url: String, parameters: [String : Any]?, type: D.Type) -> Observable<D>
+    
+    
+    /**
+     protocol method to fetch JSON from http request and return general object.
+     It uses Alamofire Pod for Networking.
+     
+     - returns:
+     return Observable of type Any which emit an event when the request is finished.
+     
+     - parameters:
+        - method: enum case from NetworkMethod (Http Method).
+        - url: The http request end point path which contins the path and the query string params.
+        - parameters : the http requst body params.
+     */
+    
     func request(method: NetworkMethod, url: String, parameters: [String : Any]?) -> Observable<Any>
-    func image(url: String) -> Observable<UIImage>
 }
 
+/**
+ Network class used to implement Networking protocol and do the http request using Alamofire Pod and decoade JSON into models by Himotoki Pod.
+ */
+
 final class Network: Networking {
-    private let queue = DispatchQueue(label: "RxGithub.Network.Queue")
+    private let queue = DispatchQueue(label: "news.Network.Queue")
     
     func request<D: Himotoki.Decodable>(method: NetworkMethod, url: String, parameters: [String : Any]?, type: D.Type) -> Observable<D> {
         return request(method: method, url: url, parameters: parameters)
@@ -55,30 +97,11 @@ final class Network: Networking {
             }
         }
     }
-    
-    func image(url: String) -> Observable<UIImage> {
-        return Observable.create { observer in
-            let request = Alamofire.request(url, method: .get)
-                .validate()
-                .response(queue: self.queue, responseSerializer: Alamofire.DataRequest.dataResponseSerializer()) { response in
-                    switch response.result {
-                    case .success(let data):
-                        guard let image = UIImage(data: data) else {
-                            observer.onError(NetworkError.IncorrectDataReturned)
-                            return
-                        }
-                        observer.onNext(image)
-                        observer.onCompleted()
-                    case .failure(let error):
-                        observer.onError(error)
-                    }
-            }
-            return Disposables.create {
-                request.cancel()
-            }
-        }
-    }
 }
+
+/**
+ NetworkMethod extension to do the maping between NetworkMethod enum to Alamofire HTTPMethod enum.
+ */
 
 fileprivate extension NetworkMethod {
     func httpMethod() -> HTTPMethod {
