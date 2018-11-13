@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  NewsApp
+
+  Created by Al-sawafta, Amjad on 11/11/18.
+  Copyright © 2018 AlFuttam. All rights reserved.
+*/
+
+//MARK: Search Page
+
+"PUBLISHED_AT" = "Published At";
+"NEWS"         = "News";
+
+//MARK: Details Page
+
+"AUTHOR"       = "Author";
+"DETAILS"      = "Details";
+
