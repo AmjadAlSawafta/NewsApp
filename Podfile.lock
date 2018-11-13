@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.3)
   - Himotoki (3.2.0)
   - Nimble (7.3.1)
+  - Nuke (7.5.1)
   - Quick (1.3.2)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - Alamofire
   - Himotoki
   - Nimble
+  - Nuke
   - Quick
   - RxCocoa
   - RxOptional
@@ -31,6 +33,7 @@ SPEC REPOS:
     - Alamofire
     - Himotoki
     - Nimble
+    - Nuke
     - Quick
     - RxAtomic
     - RxCocoa
@@ -43,6 +46,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Himotoki: 2618fc6b939ad6d9b71c52c90fe210f54ea28167
   Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  Nuke: 3814db501e55f17951451839c726ffd91641e9a5
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
@@ -51,6 +55,6 @@ SPEC CHECKSUMS:
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
 
-PODFILE CHECKSUM: 20ab84627dd9dd742f88902456bed2679587d685
+PODFILE CHECKSUM: b0199498accb3929d59cbe02e3234aef357a1c83
 
 COCOAPODS: 1.5.3

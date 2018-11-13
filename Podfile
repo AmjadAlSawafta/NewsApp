@@ -23,16 +23,24 @@ target 'NewsApp' do
   pod 'RxCocoa'
   pod 'RxOptional'
   
+  # UI
+  pod 'Nuke'
+  
   target 'NewsAppTests' do
     inherit! :search_paths
     # Pods for testing
+    # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'NewsAppUITests' do
     inherit! :search_paths
-    # Pods for testing
-    pod 'Quick'
-    pod 'Nimble'
+  end
+  
+  target 'AppExtensions' do
+      inherit! :search_paths
+      # Pods for Extensions
   end
 
 end
