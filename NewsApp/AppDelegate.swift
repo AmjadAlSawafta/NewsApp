@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import AppExtensions
+import Swinject
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+        let container = DependencyInjection.sharedInstance.startInjection()
+        initScreen(with: container)
         return true
     }
 
@@ -43,4 +47,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
+extension AppDelegate {
+    
+    func initScreen(with container:Container){
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.backgroundColor = UIColor.white
+        window.makeKeyAndVisible()
+        self.window = window
+        let bundle = Bundle(for: SearchViewController.self)
+        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: bundle, container: container)
+        window.rootViewController = storyboard.instantiateInitialViewController()
+    }
+}
