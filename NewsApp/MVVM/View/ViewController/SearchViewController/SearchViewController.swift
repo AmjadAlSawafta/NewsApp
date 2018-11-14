@@ -49,6 +49,12 @@ class SearchViewController: BaseViewController {
 
     private func setupViews(){
         self.title = "NEWS".localized
+        // set accessibilityLabel for UI Testing
+        self.searchBar.accessibilityLabel = "SearchBar"
+        self.searchBar.isAccessibilityElement = true
+        self.tableView.accessibilityLabel = "tableView"
+        self.tableView.isAccessibilityElement = true
+        
     }
     
     /**

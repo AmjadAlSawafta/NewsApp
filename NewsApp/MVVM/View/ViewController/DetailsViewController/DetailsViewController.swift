@@ -55,6 +55,8 @@ class DetailsViewController: UITableViewController {
         titleLabel.text = viewModel.title
         titleLabel.font = detailsFont
         descriptionLabel.font = descriptionFont
+        // set accessibilityLabel for UI Testing
+        self.imageView.accessibilityLabel = "DetailsImageView"
     }
 
     /**

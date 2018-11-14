@@ -7,9 +7,12 @@
 //
 
 import XCTest
+import AppExtensions
 
 class NewsAppUITests: XCTestCase {
-        
+    
+    let app = XCUIApplication()
+    
     override func setUp() {
         super.setUp()
         
@@ -18,7 +21,7 @@ class NewsAppUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        self.app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
@@ -28,9 +31,21 @@ class NewsAppUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testSearch() {
+        let search = app.otherElements["SearchBar"]
+        XCTAssert(search.exists, "Search bar does not exist")
+        let query = "Apple"
+       
+        typeOnKeyboard(element: search, text: query)
+        sleep(5) // wait until results return from API
+        
+        let tableView = app.tables["tableView"]
+        XCTAssert(tableView.exists, "table View does not exist")
+        tableView.tap()
+        sleep(2) // wait until push view controller animation finished
+        XCTAssert(app.images["DetailsImageView"].exists, "table does not show Details")                
     }
     
 }
+

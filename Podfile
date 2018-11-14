@@ -28,10 +28,6 @@ target 'NewsApp' do
   
   target 'NewsAppTests' do
     inherit! :search_paths
-    # Pods for testing
-    # Pods for testing
-    pod 'Quick'
-    pod 'Nimble'
   end
 
   target 'NewsAppUITests' do

@@ -39,6 +39,7 @@
 		943870182198B4D60057FBC1 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943870172198B4D60057FBC1 /* DependencyInjection.swift */; };
 		9438701B2198B6CE0057FBC1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438701A2198B6CE0057FBC1 /* DetailsViewController.swift */; };
 		9438701D2198B8560057FBC1 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9438701C2198B8560057FBC1 /* DetailsViewModel.swift */; };
+		9458D685219CCEF700EB56E1 /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9458D684219CCEF700EB56E1 /* XCTestExtensions.swift */; };
 		947135C72197A4C2005E4493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947135C62197A4C2005E4493 /* AppDelegate.swift */; };
 		947135CC2197A4C2005E4493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947135CA2197A4C2005E4493 /* Main.storyboard */; };
 		947135CE2197A4C3005E4493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 947135CD2197A4C3005E4493 /* Assets.xcassets */; };
@@ -146,6 +147,8 @@
 		943870172198B4D60057FBC1 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		9438701A2198B6CE0057FBC1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9438701C2198B8560057FBC1 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		9458D682219CCE9E00EB56E1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9458D684219CCEF700EB56E1 /* XCTestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		947135C32197A4C2005E4493 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		947135C62197A4C2005E4493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		947135CB2197A4C2005E4493 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 		90AD1A3C18666712BCDBD98C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9458D682219CCE9E00EB56E1 /* XCTest.framework */,
 				0398EF8DABF353C8B476377E /* Pods_NewsApp.framework */,
 				D24C54E5E0D63D51200BD6F1 /* Pods_NewsAppTests.framework */,
 				F550E4AD939E317B9A8BC843 /* Pods_NewsAppUITests.framework */,
@@ -479,6 +483,7 @@
 			children = (
 				947135E62197A4C4005E4493 /* NewsAppUITests.swift */,
 				947135E82197A4C4005E4493 /* Info.plist */,
+				9458D684219CCEF700EB56E1 /* XCTestExtensions.swift */,
 			);
 			path = NewsAppUITests;
 			sourceTree = "<group>";
@@ -564,7 +569,6 @@
 				947135D32197A4C4005E4493 /* Sources */,
 				947135D42197A4C4005E4493 /* Frameworks */,
 				947135D52197A4C4005E4493 /* Resources */,
-				E23D9BBF91767872CCFF2966 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -798,26 +802,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E23D9BBF91767872CCFF2966 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewsAppTests/Pods-NewsAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -880,6 +864,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9458D685219CCEF700EB56E1 /* XCTestExtensions.swift in Sources */,
 				947135E72197A4C4005E4493 /* NewsAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1045,7 +1030,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfuttam.NewsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewsApp.app/NewsApp";
 			};
@@ -1403,7 +1388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfuttam.NewsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewsApp.app/NewsApp";
 			};
@@ -1424,7 +1409,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alfuttam.NewsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewsApp.app/NewsApp";
 			};

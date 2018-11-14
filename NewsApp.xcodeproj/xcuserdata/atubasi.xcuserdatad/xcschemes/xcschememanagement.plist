@@ -4,10 +4,43 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AppExtensions.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>NewsApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>15</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>94386FBD2197B2B50057FBC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94386FC52197B2B60057FBC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>947135C22197A4C2005E4493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>947135D62197A4C4005E4493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>947135E12197A4C4005E4493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
