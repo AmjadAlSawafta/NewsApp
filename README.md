@@ -51,3 +51,6 @@ Once the user tap on any article, the app shows the article details such as titl
 - **Preferences**: used to get all app preferences like base URL, apiKey ..etc. and it used to for main bundle methods (fetch values from `info.plist` file).
 - **Resources**: group contains Localizable String files to show the app in English and Arabic languages. 
    
+
+### Testing
+Apply UI and Unit testing for search feature.
